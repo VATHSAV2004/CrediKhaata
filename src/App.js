@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Auth from './components/Auth';
+import Dashboard from './components/Dashboard';
+import CustomerDetail from './components/CustomerDetail';
+import { AuthProvider } from './context/AuthContext';
+import AddCustomer from './components/Forms/AddCustomer';
+import AddLoan from './components/Forms/AddLoan';
+import RecordRepayment from './components/Forms/RecordRepayment';
+import { CustomerProvider } from './context/CustomerContext'; // ✅ Import here
+
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <CustomerProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Auth />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/customer/:id" element={<CustomerDetail />} />
+
+          <Route path="/add-customer" element={<AddCustomer />} />
+  <Route path="/add-loan/:id" element={<AddLoan />} />
+  <Route path="/repay/:id" element={<RecordRepayment />} />
+        </Routes>
+      </Router>
+      </CustomerProvider>
+    </AuthProvider>
   );
 }
 

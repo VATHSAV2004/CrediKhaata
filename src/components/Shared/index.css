@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    padding: 10px;
+    color: #fff;
+  }
+  .navbar a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .toast.success { background: green; }
+  .toast.error { background: red; }
