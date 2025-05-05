@@ -1,12 +1,156 @@
-.customer-detail {
-    padding: 20px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+.customer-detail-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.customer-detail-header {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.customer-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.customer-action-link {
+  text-decoration: none;
+}
+
+.customer-action-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.customer-action-button:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.loan {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.loan.overdue {
+  border: 2px solid #e74c3c;
+  background-color: #f8d7da;
+}
+
+.loan p {
+  font-size: 14px;
+  color: #555;
+  flex: 1 1 100%;
+}
+
+.loan strong {
+  font-weight: bold;
+}
+
+.loan-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.repayments ul {
+  padding-left: 20px;
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.repayments li {
+  margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
   .loan {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
-  .loan.overdue {
-    background-color: #ffeaea;
-    border-left: 5px solid red;
+
+  .loan p {
+    flex: 1 1 auto;
   }
+
+  .loan-details {
+    flex: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .loan p {
+    flex: 1 1 100%;
+  }
+
+  .loan-details {
+    flex: 1 1 100%;
+  }
+
+  .customer-actions {
+    flex-direction: column;
+  }
+
+  .customer-action-button {
+    width: 100%;
+  }
+}
+
+
+.back-button-container {
+  margin-bottom: 20px;
+}
+
+.back-button {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #f0f0f0;
+  color: #0056b3;
+}
+
+.back-button:active {
+  background-color: #e6e6e6;
+}

@@ -1,4 +1,3 @@
-// src/context/CustomerContext.js
 import { createContext, useContext, useState } from 'react';
 import { customers as initialCustomers } from '../data/customers';
 

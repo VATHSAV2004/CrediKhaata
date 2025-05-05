@@ -1,4 +1,3 @@
-// src/data/customers.js
 
 export const customers = [
   {

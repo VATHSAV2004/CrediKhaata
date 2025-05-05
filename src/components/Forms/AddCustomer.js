@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCustomers } from '../../context/CustomerContext';
-import './index.css';
+import './AddCustomer.css'; 
 
 const AddCustomer = () => {
   const [name, setName] = useState('');
-  const { addCustomer } = useCustomers(); // Get the addCustomer function from context
+  const { addCustomer } = useCustomers(); 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -13,28 +13,31 @@ const AddCustomer = () => {
     if (!name.trim()) return alert('Customer name is required.');
 
     const newCustomer = {
-      id: Date.now().toString(), // Unique ID for the customer
+      id: Date.now().toString(), 
       name,
-      loans: [], // Start with an empty array of loans
+      loans: [], 
     };
 
-    addCustomer(newCustomer); // Call addCustomer from the context to update the state
+    addCustomer(newCustomer); 
     alert(`Customer "${name}" added.`);
 
-    navigate('/dashboard'); // Navigate back to dashboard after adding the customer
+    navigate('/dashboard'); 
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <h2>Add New Customer</h2>
-      <input
-        type="text"
-        placeholder="Customer Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <button type="submit">Add Customer</button>
-    </form>
+    <div className="add-customer-container">
+      <button className="back-button" onClick={() => navigate('/dashboard')}>Back to Dashboard</button>
+      <form className="form" onSubmit={handleSubmit}>
+        <h2>Add New Customer</h2>
+        <input
+          type="text"
+          placeholder="Customer Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <button type="submit">Add Customer</button>
+      </form>
+    </div>
   );
 };
 

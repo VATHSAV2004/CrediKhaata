@@ -6,7 +6,7 @@ import { AuthProvider } from './context/AuthContext';
 import AddCustomer from './components/Forms/AddCustomer';
 import AddLoan from './components/Forms/AddLoan';
 import RecordRepayment from './components/Forms/RecordRepayment';
-import { CustomerProvider } from './context/CustomerContext'; // ✅ Import here
+import { CustomerProvider } from './context/CustomerContext'; 
 
 
 import './App.css';

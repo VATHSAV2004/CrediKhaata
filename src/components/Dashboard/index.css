@@ -1,14 +1,116 @@
-.dashboard ul {
-    list-style: none;
-    padding: 0;
-  }
-  .dashboard li {
+.dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.dashboard-action-link {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.dashboard-action-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dashboard-action-button:hover {
+  background-color: #0056b3;
+}
+
+.customer-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.customer-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.customer-item:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.customer-link {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.customer-link:hover {
+  color: #0056b3;
+}
+
+.customer-info {
+  font-size: 14px;
+  color: #555;
+}
+
+.customer-item.overdue {
+  background-color: #ffe6e6;  
+  border-left: 5px solid red;  
+}
+
+.customer-item.overdue .customer-link {
+  color: red;  
+}
+
+.customer-item.overdue .customer-info {
+  color: red;  
+}
+
+.customer-item.overdue .customer-info div {
+  font-weight: bold;  
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
   }
-  .dashboard li.overdue {
-    background-color: #ffe5e5;
-    border-left: 5px solid red;
+
+  .dashboard-header {
+    font-size: 20px;
   }
-  
+
+  .dashboard-action-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .customer-item {
+    padding: 8px;
+  }
+
+  .customer-info {
+    font-size: 12px;
+  }
+}
+.logout-button {
+  padding: 10px 20px;
+  background-color: #dc3545; 
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
